@@ -58,44 +58,44 @@ $products_query = $yhendus->query("SELECT id, name, price FROM products");
 <?php include("header.php"); ?>
 <h1>Admin Panel</h1>
 
-<h2>Manage User Balances</h2>
+<h2>Kasutajate saldode haldamine</h2>
 <form method="POST" action="">
     <label for="user_id">User ID:</label>
     <select name="user_id">
         <?php while ($user = $users_query->fetch_assoc()): ?>
-            <option value="<?php echo $user['id']; ?>"><?php echo $user['username']; ?> (Balance: <?php echo $user['balance']; ?>)</option>
+            <option value="<?php echo $user['id']; ?>"><?php echo $user['username']; ?> (Saldo: <?php echo $user['balance']; ?>)</option>
         <?php endwhile; ?>
     </select>
     <br>
-    <label for="new_balance">New Balance:</label>
+    <label for="new_balance">Uus tasakaal:</label>
     <input type="number" step="0.01" name="new_balance" required>
-    <button type="submit" name="update_balance">Update Balance</button>
+    <button type="submit" name="update_balance">Värskenda tasakaal</button>
 </form>
 
-<h2>Add New Product</h2>
+<h2>Lisa uus toode</h2>
 <form method="POST" action="">
-    <label for="product_name">Product Name:</label>
+    <label for="product_name">Toote nimi:</label>
     <input type="text" name="product_name" required>
     <br>
-    <label for="product_price">Price:</label>
+    <label for="product_price">Hind:</label>
     <input type="number" step="0.01" name="product_price" required>
-    <button type="submit" name="add_product">Add Product</button>
+    <button type="submit" name="add_product">Lisa toode</button>
 </form>
 
 <h2>Manage Products</h2>
 <table border="1">
     <tr>
-        <th>Product Name</th>
-        <th>Price</th>
-        <th>Actions</th>
+        <th>Toote nimi</th>
+        <th>Hind</th>
+        <th>Tegevused</th>
     </tr>
     <?php while ($product = $products_query->fetch_assoc()): ?>
         <tr>
             <td><?php echo $product['name']; ?></td>
-            <td><?php echo $product['price']; ?> монет</td>
+            <td><?php echo $product['price']; ?> Mündid</td>
             <td>
-                <a href="edit_product.php?id=<?php echo $product['id']; ?>">Edit</a>
-                <a href="?delete_product=<?php echo $product['id']; ?>" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                <a href="edit_product.php?id=<?php echo $product['id']; ?>">Muuda</a>
+                <a href="?delete_product=<?php echo $product['id']; ?>" onclick="return confirm('Kas olete kindel, et soovite selle toote kustutada?')">Kustuta</a>
             </td>
         </tr>
     <?php endwhile; ?>

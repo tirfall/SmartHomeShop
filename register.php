@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Registratsioon</title>
+    <title>Registreerimine</title>
 </head>
 <body>
 <?php

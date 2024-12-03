@@ -4,7 +4,7 @@ include('config.php');
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    die("Пожалуйста, войдите в систему.");
+    die("Palun logi sisse.");
 }
 
 $product_id = $_POST['product_id'];
@@ -17,7 +17,7 @@ $product_query->execute();
 $product_result = $product_query->get_result();
 
 if ($product_result->num_rows === 0) {
-    die("Товар не найден.");
+    die("Toodet ei leitud.");
 }
 
 // Добавление товара в корзину
@@ -31,7 +31,7 @@ $add_to_cart->execute();
 
 // Ответ для клиента
 echo "<script>
-    alert('Товар успешно добавлен в корзину!');
+    alert('Toode edukalt lisatud ostukorvi!');
     window.location.href = 'catalog.php';
 </script>";
 ?>

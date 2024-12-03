@@ -48,37 +48,37 @@ $order_items_result = $order_items_query->get_result();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order Success</title>
+    <title>Tellimus õnnestus</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php include('header.php'); ?>
 
 <div class="order-success">
-    <h1>Спасибо за ваш заказ!</h1>
-    <p>Номер заказа: <strong>#<?php echo $order['id']; ?></strong></p>
-    <p>Имя клиента: <strong><?php echo $order['username']; ?></strong></p>
-    <p>Дата заказа: <strong><?php echo $order['order_date']; ?></strong></p>
-    <p>Сумма заказа: <strong><?php echo $order['total_price']; ?> монет</strong></p>
-    <p>Статус заказа: <strong><?php echo $order['status']; ?></strong></p>
+    <h1>Täname tellimuse eest!</h1>
+    <p>Tellimus number: <strong>#<?php echo $order['id']; ?></strong></p>
+    <p>Kliendi nimi: <strong><?php echo $order['username']; ?></strong></p>
+    <p>Tellimus aeg: <strong><?php echo $order['order_date']; ?></strong></p>
+    <p>Tellimuse summa: <strong><?php echo $order['total_price']; ?> mündid</strong></p>
+    <p>Tellimuse olek: <strong><?php echo $order['status']; ?></strong></p>
 
-    <h2>Товары в заказе:</h2>
+    <h2>Tooted tellimusel:</h2>
     <table>
         <tr>
-            <th>Название</th>
-            <th>Количество</th>
-            <th>Цена</th>
+            <th>Nimi</th>
+            <th>Kogus</th>
+            <th>Hind</th>
         </tr>
         <?php while ($item = $order_items_result->fetch_assoc()): ?>
             <tr>
                 <td><?php echo $item['name']; ?></td>
                 <td><?php echo $item['quantity']; ?></td>
-                <td><?php echo $item['price']; ?> монет</td>
+                <td><?php echo $item['price']; ?> Mündid</td>
             </tr>
         <?php endwhile; ?>
     </table>
 
-    <a href="catalog.php" class="button">Вернуться в каталог</a>
+    <a href="catalog.php" class="button">Tagasi kataloogi</a>
 </div>
 
 </body>

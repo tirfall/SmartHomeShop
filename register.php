@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php
 include("header.php");
 ?>
+<h1>Registreerimine</h1>
 <form method="POST" action="register.php">
     <input type="text" name="username" placeholder="Kasutaja nimi" required>
     <input type="password" name="password" placeholder="Parool" required>

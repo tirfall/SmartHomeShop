@@ -25,7 +25,7 @@ $product_result = $product_query->get_result();
 
 // Если продукт не найден
 if ($product_result->num_rows == 0) {
-    echo "Продукт не найден!";
+    echo "Toote ei leidnud!";
     exit();
 }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Редактирование продукта</title>
+    <title>Toote redigeerimine</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -59,18 +59,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
 <?php
 include("header.php");
 ?>
-<h1>Редактировать продукт</h1>
+<h1>Redigeeri toodet</h1>
 
 <form method="POST" action="">
-    <label for="product_name">Название продукта:</label>
+    <label for="product_name">Toote nimi:</label>
     <input type="text" name="product_name" value="<?php echo htmlspecialchars($product['name']); ?>" required>
     <br>
-    <label for="product_price">Цена:</label>
+    <label for="product_price">Hind:</label>
     <input type="number" step="0.01" name="product_price" value="<?php echo htmlspecialchars($product['price']); ?>" required>
     <br>
-    <button type="submit" name="update_product">Обновить продукт</button>
+    <button type="submit" name="update_product">Uuenda toodet</button>
 </form>
 
-<a href="admin.php">Назад в админ-панель</a>
+<a href="admin.php">Tagasi administraatoripaneelile</a>
 </body>
 </html>

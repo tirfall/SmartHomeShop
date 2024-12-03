@@ -35,7 +35,7 @@ $cart_items = $cart_query->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>Isiklik konto</title>
     <link rel="stylesheet" href="styleKasutaja.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -44,17 +44,17 @@ $cart_items = $cart_query->get_result();
 include("header.php");
 ?>
 
-<h1>Личный кабинет</h1>
+<h1>Isiklik konto</h1>
 <div class="profile-container">
     <div class="account-info">
-        <h2>Информация об аккаунте</h2>
-        <p><strong>Имя пользователя:</strong> <?php echo htmlspecialchars($user_info['username']); ?></p>
+        <h2>Konto teave</h2>
+        <p><strong>Kasutaja nimi:</strong> <?php echo htmlspecialchars($user_info['username']); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user_info['email']); ?></p>
-        <p><strong>Баланс:</strong> <?php echo htmlspecialchars($user_info['balance']); ?> mündid</p>
+        <p><strong>Tasakaal:</strong> <?php echo htmlspecialchars($user_info['balance']); ?> mündid</p>
     </div>
 
     <div class="cart">
-        <h2>Корзина</h2>
+        <h2>Ostukorv</h2>
         <?php if ($cart_items->num_rows > 0): ?>
             <ul>
                 <?php while ($item = $cart_items->fetch_assoc()): ?>
@@ -69,7 +69,7 @@ include("header.php");
                 <button type="submit">Esitage tellimus</button>
             </form>
         <?php else: ?>
-            <p>Корзина пуста</p>
+            <p>Ostukorv tühi</p>
         <?php endif; ?>
     </div>
 </div>

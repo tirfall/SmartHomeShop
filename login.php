@@ -23,15 +23,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['balance'] = $user['Balance'];
 
             echo "<script>
-                alert('Вход выполнен успешно!');
+                alert('Sisselogimine õnnestus!');
                 window.location.href = 'catalog.php';
             </script>";
             exit;
         } else {
-            echo "Неправильный пароль!";
+            echo "Vale parool!";
         }
     } else {
-        echo "Пользователь не найден!";
+        echo "Kasutaja ei leidnud!";
     }
 }
 ?>
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php
 include("header.php");
 ?>
-<h1>Вход</h1>
+<h1>Logi sisse</h1>
 <form method="POST" action="login.php">
     <input type="text" name="username" placeholder="Kasutaja nimi" required>
     <input type="password" name="password" placeholder="Parool" required>

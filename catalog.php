@@ -7,21 +7,21 @@ $query = $yhendus->query("SELECT * FROM products");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Каталог товаров</title>
+    <title>Tootekataloog</title>
     <link rel="stylesheet" href="styleCatalog.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php include("header.php"); ?>
-<h1>Каталог</h1>
+<h1>Kataloog</h1>
 <div class="catalog">
     <?php while ($row = $query->fetch_assoc()): ?>
         <div class="product">
             <h2><?php echo $row['name']; ?></h2>
-            <p>Цена: <?php echo $row['price']; ?> монет</p>
+            <p>Hind: <?php echo $row['price']; ?> mündid</p>
             <form method="POST" action="purchase.php">
                 <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
-                <button type="submit">Добавить в корзину</button>
+                <button type="submit">Lisa ostukorvi</button>
             </form>
         </div>
     <?php endwhile; ?>

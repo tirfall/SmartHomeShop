@@ -85,8 +85,8 @@ if ($user_info['balance'] >= $total_price) {
     exit();
 } else {
     // Если на балансе недостаточно средств
-    echo "<p>У вас недостаточно средств для оформления заказа.</p>";
-    echo "<p><a href='kasutaja.php'>Вернуться в личный кабинет</a></p>";
+    echo "<p>Teil ei ole tellimuse esitamiseks piisavalt raha.</p>";
+    echo "<p><a href='kasutaja.php'>Naaske oma isiklikule kontole</a></p>";
 }
 
 
